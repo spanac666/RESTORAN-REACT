@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>JEDNOSTAVAN TEST</h1>
+    <button onclick="alert('HTML DUGME RADI!')">HTML TEST DUGME</button>
+    <button onclick="window.open('https://google.com', '_blank')">OTVORI GOOGLE</button>
+    
+    <script>
+        console.log('JavaScript se učitava...')
+        
+        function testFunction() {
+            alert('JavaScript funkcija radi!')
+        }
+        
+        // Test after page loads
+        window.onload = function() {
+            console.log('Stranica je učitana')
+        }
+    </script>
+    
+    <button onclick="testFunction()">JS FUNKCIJA TEST</button>
+</body>
+</html>

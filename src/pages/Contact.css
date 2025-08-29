@@ -1,0 +1,825 @@
+.main-contact {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-header {
+  animation: slideInDown 0.8s ease-out 0.2s both;
+}
+
+.contact-form-section {
+  animation: slideInLeft 0.8s ease-out 0.4s both;
+}
+
+.contact-info-section {
+  animation: slideInRight 0.8s ease-out 0.6s both;
+}
+
+.gallery-section {
+  animation: slideInUp 0.8s ease-out 0.8s both;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-contact::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/slike/logo.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.25;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.contact-header::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    rgba(231, 76, 60, 0.2), 
+    rgba(192, 57, 43, 0.3), 
+    rgba(231, 76, 60, 0.15));
+  background-size: 200% 200%;
+  border-radius: 27px;
+  z-index: -2;
+  animation: subtleColorGradient 8s ease-in-out infinite;
+}
+
+.contact-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.03), transparent);
+  transition: left 0.8s ease;
+  z-index: -1;
+}
+
+.contact-header:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(231, 76, 60, 0.15);
+}
+
+.contact-header:hover::before {
+  animation-duration: 5s;
+}
+
+.contact-header:hover::after {
+  left: 100%;
+}
+
+.contact-header h1 {
+  color: #333;
+  font-size: 2.8em;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, 
+    #e74c3c, #c0392b, #e74c3c, #ff6347);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  transition: all 0.3s ease;
+  animation: subtleTextGradient 7s ease-in-out infinite;
+  font-weight: 700;
+}
+
+.contact-header:hover h1 {
+  transform: scale(1.05);
+  animation-duration: 4s;
+}
+
+.contact-header p {
+  color: #666;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-header:hover p {
+  color: #555;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.contact-form-section,
+.contact-info-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  overflow: hidden;
+}
+
+.contact-form-section::before,
+.contact-info-section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, 
+    rgba(231, 76, 60, 0.25), 
+    rgba(192, 57, 43, 0.2), 
+    rgba(255, 99, 71, 0.15),
+    rgba(231, 76, 60, 0.3));
+  background-size: 250% 250%;
+  border-radius: 22px;
+  z-index: -2;
+  animation: subtleColorGradient 7s ease-in-out infinite;
+}
+
+.contact-form-section::after,
+.contact-info-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.08), transparent);
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+.contact-form-section:hover,
+.contact-info-section:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(231, 76, 60, 0.2);
+}
+
+.contact-form-section:hover::before,
+.contact-info-section:hover::before {
+  animation-duration: 4s;
+}
+
+.contact-form-section:hover::after,
+.contact-info-section:hover::after {
+  left: 100%;
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.9em;
+  font-weight: 600;
+  background: linear-gradient(45deg, 
+    #e74c3c, #c0392b, #e74c3c);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subtleTextGradient 6s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.contact-form-section:hover h2,
+.contact-info-section:hover h2 {
+  transform: scale(1.03);
+  animation-duration: 4s;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+  font-size: 1.1em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+  transform: translateY(-2px);
+  background: white;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  border-left: 4px solid #e74c3c;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(231, 76, 60, 0.12), 
+    rgba(231, 76, 60, 0.06));
+  transition: width 0.5s ease;
+  z-index: -1;
+}
+
+.info-item::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    rgba(231, 76, 60, 0.2), 
+    rgba(192, 57, 43, 0.15), 
+    rgba(231, 76, 60, 0.25));
+  background-size: 200% 200%;
+  border-radius: 20px;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: subtleColorGradient 8s ease-in-out infinite;
+}
+
+.info-item:hover {
+  transform: translateX(12px) translateY(-3px);
+  border-left-width: 6px;
+  box-shadow: 0 12px 30px rgba(231, 76, 60, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.info-item:hover::before {
+  width: 100%;
+}
+
+.info-item:hover::after {
+  opacity: 1;
+}
+
+.info-item h3 {
+  color: #e74c3c;
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-item:hover h3 {
+  transform: scale(1.05);
+  color: #c0392b;
+}
+
+.info-item p {
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.info-item:hover p {
+  color: #333;
+}
+
+.gallery-section {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, 
+    rgba(231, 76, 60, 0.3), 
+    rgba(192, 57, 43, 0.4), 
+    rgba(231, 76, 60, 0.2), 
+    rgba(255, 99, 71, 0.3));
+  background-size: 300% 300%;
+  border-radius: 28px;
+  z-index: -2;
+  animation: subtleColorGradient 6s ease-in-out infinite;
+}
+
+.gallery-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, 
+    transparent, 
+    rgba(231, 76, 60, 0.05), 
+    transparent);
+  animation: rotate 15s linear infinite;
+  z-index: -1;
+}
+
+@keyframes subtleColorGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.gallery-section:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(231, 76, 60, 0.2);
+}
+
+.gallery-section:hover::before {
+  animation-duration: 4s;
+}
+
+.gallery-section:hover::after {
+  animation-duration: 10s;
+}
+
+.gallery-section h2 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 700;
+  background: linear-gradient(45deg, 
+    #e74c3c, #c0392b, #e74c3c);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subtleTextGradient 5s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.gallery-section:hover h2 {
+  transform: scale(1.05);
+  animation-duration: 3s;
+}
+
+@keyframes subtleTextGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.image-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.slider-container {
+  max-width: 800px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.slider-btn {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: #e74c3c;
+}
+
+.indicator:hover {
+  background: #999;
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-contact {
+    padding: 10px;
+  }
+  
+  .contact-header h1 {
+    font-size: 1.8em;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-header p {
+    font-size: 0.9em;
+  }
+  
+  .contact-content {
+    gap: 15px;
+  }
+  
+  .contact-form-section,
+  .contact-info-section,
+  .gallery-section {
+    padding: 15px;
+  }
+  
+  .slider-container {
+    max-width: 100%;
+    height: 350px;
+  }
+  
+  .slider-btn {
+    padding: 12px;
+    font-size: 1.2em;
+  }
+}
+
+/* Mobile responsive for contact elements */
+@media (max-width: 768px) {
+  .quick-nav {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Email Button Styles */
+.email-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+  text-align: center;
+  cursor: pointer;
+}
+
+.email-button:hover {
+  background: linear-gradient(135deg, #e55a2b, #e07e1a);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.email-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+  text-align: center;
+  cursor: pointer;
+}
+
+.whatsapp-button:hover {
+  background: linear-gradient(135deg, #1faa55, #0e6b5e);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.whatsapp-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+/* Enhanced Slider Styles */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-image {
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.slider-image:hover {
+  transform: scale(1.02);
+}
+
+/* Quick Navigation Styles */
+.quick-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.9), rgba(247, 147, 30, 0.9));
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.nav-link:hover {
+  background: linear-gradient(135deg, rgba(229, 90, 43, 0.95), rgba(224, 126, 26, 0.95));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:active {
+  transform: translateY(0);
+}
+
+/* Smooth scroll sections */
+.contact-content,
+.gallery-section {
+  scroll-margin-top: 100px;
+}
+
+.contact-form-section,
+.contact-info-section {
+  scroll-margin-top: 120px;
+}
+
+/* Enhanced section spacing for better scrolling */
+.gallery-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.contact-content {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
