@@ -1,3 +1,121 @@
+@media (max-width: 700px) {
+  .register-btn {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+    min-width: 55px;
+    border-radius: 7px;
+  }
+  .header-actions .register-btn {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+    min-width: 55px;
+    border-radius: 7px;
+  }
+  .basket-icon {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+  }
+  .header-actions, .header-actions-mobile {
+    gap: 8px !important;
+  }
+}
+/* Hamburger menu styles */
+.hamburger-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-icon {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: static;
+  margin-top: 8px;
+  z-index: 999;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: none !important;
+  width: 100%;
+}
+
+.dropdown-menu li {
+  width: 100%;
+  display: block;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: clamp(12px, 3vw, 16px);
+  text-align: center;
+  background: none !important;
+  border-radius: 0;
+  transition: color 0.2s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+  color: #ff6b35;
+  background: none !important;
+}
+
+@media (max-width: 700px) {
+  #navigacija1 {
+    display: none;
+  }
+  .dropdown-menu {
+    display: block;
+  }
+}
+@media (max-width: 700px) {
+  header h1, #zaglavlje h1, h1 {
+    font-size: 25px !important;
+  }
+}
+@media (max-width: 700px) {
+  .register-btn {
+    font-size: clamp(10px, 2vw, 14px);
+    padding: 6px 10px;
+  }
+}
+@media (max-width: 700px) {
+  #navigacija1 a,
+  .dropdown-menu a {
+    font-size: clamp(10px, 2vw, 14px);
+    padding: 6px 10px;
+  }
+}
+/* Make sure your index.html includes:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+@media (max-width: 400px) {
+  header h1, #zaglavlje h1, h1 {
+    font-size: 16px !important;
+    line-height: 1.1 !important;
+  }
+}
+/* Move this to the end of the file for maximum override */
 #zaglavlje {
   box-sizing: border-box;
   display: flex;
@@ -98,10 +216,6 @@ h1 {
     padding: 10px;
   }
   
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
   
   #navigacija1 ul {
     gap: 10px;
@@ -120,5 +234,11 @@ h1 {
   .register-btn {
     padding: 8px 16px;
     font-size: 12px;
+  }
+  #navigacija1 a {
+    font-size: clamp(12px, 3vw, 16px);
+  }
+  .register-btn {
+    font-size: clamp(10px, 2.5vw, 14px);
   }
 }
