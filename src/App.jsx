@@ -8,31 +8,34 @@ import Contact from './pages/Contact'
 import TestContact from './pages/TestContact'
 import AdminDashboard from './components/AdminDashboard'
 import BasketProvider from './components/BasketProvider'
+import { UserProvider } from './components/UserContext'
 import './styles/global.css'
 
 function App() {
   return (
     <BasketProvider>
-      <Router>
-        <div className="app">
-          <Routes>
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/*" element={
-              <>
-                <Header />
-                <main>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/menu" element={<Menu />} />
-                    <Route path="/contact" element={<Contact />} />
-                  </Routes>
-                </main>
-                <Footer />
-              </>
-            } />
-          </Routes>
-        </div>
-      </Router>
+      <UserProvider>
+        <Router>
+          <div className="app">
+            <Routes>
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/*" element={
+                <>
+                  <Header />
+                  <main>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/menu" element={<Menu />} />
+                      <Route path="/contact" element={<Contact />} />
+                    </Routes>
+                  </main>
+                  <Footer />
+                </>
+              } />
+            </Routes>
+          </div>
+        </Router>
+      </UserProvider>
     </BasketProvider>
   )
 }

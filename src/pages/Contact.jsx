@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Contact.css'
+import { db } from '../../firebaseConfig'
+import { addDoc, collection } from 'firebase/firestore'
 
 const Contact = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -32,10 +34,21 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(`Hvala ${formData.ime}! Vaša poruka je poslana: "${formData.poruka}"`)
-    setFormData({ ime: '', email: '', telefon: '', poruka: '' })
+    try {
+      await addDoc(collection(db, 'poruke'), {
+        ime: formData.ime,
+        email: formData.email,
+        telefon: formData.telefon,
+        poruka: formData.poruka,
+        datum: new Date().toISOString()
+      })
+      alert(`Hvala ${formData.ime}! Vaša poruka je poslana.`)
+      setFormData({ ime: '', email: '', telefon: '', poruka: '' })
+    } catch (err) {
+      alert('Greška pri slanju poruke!')
+    }
   }
 
   const nextImage = () => {

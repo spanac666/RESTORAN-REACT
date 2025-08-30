@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './RegistrationModal.css'
 import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../firebaseConfig'
+import { useUser } from './UserContext'
 
 const RegistrationModal = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const RegistrationModal = ({ onClose }) => {
     potvrdaLozinke: '',
     adresa: ''
   })
+  const { login } = useUser()
 
   const [errors, setErrors] = useState({})
 
@@ -60,13 +62,15 @@ const RegistrationModal = ({ onClose }) => {
     e.preventDefault()
     
     if (validateForm()) {
-      addDoc(collection(db, 'users'), {
+      const userData = {
         name: `${formData.ime} ${formData.prezime}`,
         email: formData.email,
         phone: formData.telefon,
         address: formData.adresa
-      })
+      }
+      addDoc(collection(db, 'users'), userData)
       alert(`Dobrodošli ${formData.ime} ${formData.prezime}! Uspješno ste se registrirali.`)
+      login(userData)
       setFormData({
         ime: '',
         prezime: '',

@@ -71,43 +71,21 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="registracija modern-card">
-          <div className="card-header">
-            <h2 className="card-title">💬 Kontaktiraj nas</h2>
-            <p className="card-subtitle">Pošaljite nam poruku</p>
+        <div className="about-section modern-card">
+          <div className="card-header about-header">
+            <h2 className="card-title about-title">Nešto o nama</h2>
           </div>
-          <form onSubmit={handleSubmit} className="modern-form">
-            <div className="form-group modern-input-group">
-              <label htmlFor="ime">Ime:</label>
-              <input
-                type="text"
-                id="ime"
-                name="ime"
-                value={formData.ime}
-                onChange={handleInputChange}
-                placeholder="Unesite vaše ime..."
-                required
-              />
-            </div>
-            <div className="form-group modern-input-group">
-              <label htmlFor="poruka">Poruka:</label>
-              <textarea
-                id="poruka"
-                name="poruka"
-                rows="4"
-                value={formData.poruka}
-                onChange={handleInputChange}
-                placeholder="Vaša poruka..."
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary modern-submit-btn">
-              <span>Pošalji poruku</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </form>
+          <div className="about-text">
+            <p className="about-highlight">
+              Naš restoran s dugom tradicijom mjesto je okupljanja za sve generacije. Nudimo raznovrsnu i jednostavnu ponudu hrane: pizza iz krušne peći, sočni burgeri, grill specijaliteti i domaći prilozi.
+            </p>
+            <p>
+              Sva jela pripremamo od domaćih i prirodno uzgojenih namirnica, s posebnom pažnjom na kvalitetu, svježinu i autentičnost okusa. Naša filozofija je jednostavna: zdrava hrana, ugodna atmosfera i pristupačne cijene.
+            </p>
+            <p>
+              Uživajte u modernom ambijentu s toplim bojama, dinamičnim svjetlima i ljubaznim osobljem. Organiziramo proslave, rođendane i druženja uz glazbu i posebne menije. Posjetite nas i osjetite zašto nas gosti biraju već generacijama!
+            </p>
+          </div>
         </div>
       </div>
     </div>
